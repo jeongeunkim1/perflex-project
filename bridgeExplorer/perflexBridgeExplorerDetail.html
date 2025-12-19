@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main</title>
+    <link
+      rel="stylesheet"
+      href="../css/bridgeExplorer/perflexBridgeExplorerDetail.css"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="headerWrap">
+        <div class="headerContent">
+          <div class="headerBox">
+            <div class="flexBasisWrap">
+              <a href="#" class="logoWrap">
+                <img src="../assets/images/logo.png" alt="" class="logo"
+              /></a>
+              <div class="tabMenuWrap">
+                <button class="tab active">Bridge</button>
+                <button class="tab">Swap</button>
+              </div>
+            </div>
+            <button class="menuButton">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </button>
+            <nav class="navMenuWrap">
+              <a href="#" class="navLink inactive">Tokens</a>
+              <a href="#" class="navLink inactive">NFTs</a>
+              <a href="#" class="navLink">Explorer</a>
+            </nav>
+            <div class="headerMenuWrap"></div>
+          </div>
+        </div>
+      </div>
+      <div class="mobileMenu">
+        <div class="mobileMenuContent">
+          <div class="closeIconWrap">
+            <div class="closeIconContent">
+              <div class="closeIcon"></div>
+              <div class="closeIcon"></div>
+            </div>
+          </div>
+          <div class="tabMenuWrap">
+            <button class="tab active">Bridge</button>
+            <button class="tab">Swap</button>
+          </div>
+          <nav class="navMenuWrap">
+            <a href="#" class="navLink">Tokens</a>
+            <a href="#" class="navLink">NFTs</a>
+            <a href="#" class="navLink">Explorer</a>
+          </nav>
+          <div class="socialLinkWrap">
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon01.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon02.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon04.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon02.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mainContent">
+      <button class="previousWrap">
+        <img src="../assets/icon/arrowLineIcon.svg" alt="" class="backIcon" />
+        <!-- icon 색깔 화이트로 교체해주세욥 -->
+        Back
+      </button>
+
+      <div class="modal">
+        <div class="modalBody">
+          <div class="listWrap">
+            <div class="statusWrap success">
+              <img src="../assets/icon/tableCompleteIcon.svg" alt="" />
+              <p class="statusTitle">Transaction completed!</p>
+            </div>
+            <div class="statusWrap pending">
+              <img src="../assets/icon/tablePendingIcon.svg" alt="" />
+              <p class="statusTitle">Transaction Pending</p>
+            </div>
+            <div class="statusWrap fail">
+              <img src="../assets/icon/tableFailedIcon.svg" alt="" />
+              <p class="statusTitle">
+                Transaction Failed - Insufficient fundsInsufficient funds
+              </p>
+            </div>
+            <div class="statusWrap canceled">
+              <img src="../assets/icon/tableCancelIcon.svg" alt="" />
+              <p class="statusTitle">Transaction Canceled</p>
+            </div>
+
+            <div class="summaryWrap">
+              <div class="summaryContent">
+                <h2 class="title">Token</h2>
+                <div class="chainWrap">
+                  <button class="chainContent">
+                    <img
+                      src="../assets/images/tokenLogo01.svg"
+                      alt=""
+                      class="chainLogo"
+                    />
+                    <div class="titleWrap">
+                      <span class="chainTitle">XPER</span>
+                    </div>
+                  </button>
+                  <span class="tokenId">177.4236 USDT</span>
+                </div>
+              </div>
+              <div class="summaryContent">
+                <h2 class="title">From</h2>
+                <div class="chainWrap">
+                  <button class="chainContent">
+                    <img
+                      src="../assets/images/chainLogo01.svg"
+                      alt=""
+                      class="chainLogo"
+                    />
+                    <div class="titleWrap">
+                      <span class="chainTitle">zkSync</span>
+                    </div>
+                  </button>
+                  <button class="addressWrap">
+                    hxe04...11n78
+                    <img src="../assets/icon/copyIcon.svg" alt="" />
+                  </button>
+                </div>
+              </div>
+              <div class="summaryContent">
+                <h2 class="title">To</h2>
+                <div class="chainWrap">
+                  <button class="chainContent">
+                    <img
+                      src="../assets/images/chainLogo02.svg"
+                      alt=""
+                      class="chainLogo"
+                    />
+                    <div class="titleWrap">
+                      <span class="chainTitle">HAVAH</span>
+                    </div>
+                  </button>
+                  <button class="addressWrap">
+                    hxe04...11n78
+                    <img src="../assets/icon/copyIcon.svg" alt="" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion open">
+              <div class="accordionHeader">
+                <span class="title">Source Chain</span>
+                <img
+                  src="../assets/icon/arrowLineIcon.svg"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+              <div class="accordionContent">
+                <div class="flexWrap">
+                  <div class="contentItem">
+                    <span class="label">TX</span>
+                    <span class="value"
+                      ><a href="#" class="link">View Tx</a></span
+                    >
+                  </div>
+                  <div class="contentItem">
+                    <span class="label">Status</span>
+                    <span class="value success">Success</span>
+                  </div>
+                  <div class="contentItem">
+                    <span class="label">Timestamp</span>
+                    <span class="value">2024-06-25 14:06:17</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion open">
+              <div class="accordionHeader">
+                <span class="title">Destination Chain</span>
+                <img
+                  src="../assets/icon/arrowLineIcon.svg"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+              <div class="accordionContent">
+                <div class="flexWrap">
+                  <div class="contentItem">
+                    <span class="label">TX</span>
+                    <span class="value"
+                      ><a href="#" class="link">View Tx</a></span
+                    >
+                  </div>
+                  <div class="contentItem">
+                    <span class="label">Status</span>
+                    <span class="value success fail">Fail</span>
+                  </div>
+                  <div class="contentItem">
+                    <span class="label">Timestamp</span>
+                    <span class="value">2024-06-25 14:06:17</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion open">
+              <div class="accordionHeader">
+                <span class="title">Fee</span>
+                <img
+                  src="../assets/icon/arrowLineIcon.svg"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+              <div class="accordionContent">
+                <div class="flexWrap">
+                  <div class="contentItem">
+                    <span class="label">Total Fee</span>
+                    <span class="value">0.02 USDT</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion open">
+              <div class="accordionHeader">
+                <span class="title">Other Details</span>
+                <img
+                  src="../assets/icon/arrowLineIcon.svg"
+                  alt=""
+                  class="icon"
+                />
+              </div>
+              <div class="accordionContent">
+                <div class="flexWrap">
+                  <div class="contentItem">
+                    <span class="label">Gas Used</span>
+                    <span class="value">21000</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footerWrap">
+        <p class="copyright">
+          Copyright © 2022 WEB3 SOLUTIONS PTE. LTD. All Rights Reserved
+        </p>
+        <div class="socialLinkWrap">
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon01.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon02.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon04.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon02.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script src="../js/mobileMenu.js"></script>
+<script src="../js/headerSlide.js"></script>
+<script src="../js/accordion.js"></script>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main</title>
+    <link rel="stylesheet" href="../css/swap/perflexSwapModal.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="headerWrap">
+        <div class="headerContent">
+          <div class="headerBox">
+            <div class="flexBasisWrap">
+              <a href="#" class="logoWrap">
+                <img src="assets/images/logo.svg" alt="" class="logo"
+              /></a>
+              <div class="tabMenuWrap">
+                <button class="tab">Bridge</button>
+                <button class="tab active">Swap</button>
+              </div>
+            </div>
+            <button class="menuButton">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </button>
+            <nav class="navMenuWrap">
+              <a href="#" class="navLink">Swap</a>
+              <a href="#" class="navLink inactive">Pools</a>
+              <a href="#" class="navLink inactive">Farm</a>
+            </nav>
+            <div class="headerMenuWrap">
+              <button class="buttonContent">
+                <img src="../assets/icon/walletIcon.svg" alt="" />
+                Connect Wallet
+              </button>
+              <button class="buttonContent">
+                <img src="../assets/icon/moreIcon.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mobileMenu">
+        <div class="mobileMenuContent">
+          <div class="closeIconWrap">
+            <div class="closeIconContent">
+              <div class="closeIcon"></div>
+              <div class="closeIcon"></div>
+            </div>
+          </div>
+          <div class="tabMenuWrap">
+            <button class="tab active">Bridge</button>
+            <button class="tab">Swap</button>
+          </div>
+          <nav class="navMenuWrap">
+            <a href="#" class="navLink">Swap</a>
+            <a href="#" class="navLink">Pools</a>
+            <a href="#" class="navLink">Farm</a>
+          </nav>
+          <div class="socialLinkWrap">
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon01.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon02.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mainContent">
+      <div class="sectionWrap">
+        <div class="sectionContent">
+          <div class="swapWrap">
+            <div class="textWrap">
+              <h1 class="sectionTitle">Swap</h1>
+              <div class="iconWrap">
+                <button>
+                  <img src="../assets/icon/reloadIcon.svg" alt="" />
+                </button>
+                <button>
+                  <img src="../assets/icon/controlIcon.svg" alt="" />
+                </button>
+              </div>
+            </div>
+
+            <div class="sectionBox">
+              <div class="titleWrap">
+                <h2 class="title">You Pay</h2>
+                <div class="percentWrap">
+                  <button class="percent">25%</button>
+                  <button class="percent">50%</button>
+                  <button class="percent">75%</button>
+                  <button class="percent">MAX</button>
+                </div>
+              </div>
+              <div class="amountWrap">
+                <div class="tokenWrap">
+                  <button class="tokenContent">
+                    <img
+                      src="../assets/images/tokenLogo01.svg"
+                      alt=""
+                      class="tokenLogo"
+                    />
+                    <div class="titleWrap">
+                      <span class="tokenTitle">XPER</span>
+                      <img
+                        src="../assets/icon/arrowLineIcon.svg"
+                        alt=""
+                        class="icon"
+                      />
+                    </div>
+                  </button>
+                  <div class="flexWrap">
+                    <input type="number" class="amount" placeholder="0.0" />
+                    <div class="balanceWrap">
+                      <span>Balance</span>
+                      <p class="balance inactive">-</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exchangeWrap">
+              <button class="exchangeIcon">
+                <img
+                  src="../assets/icon/exchangeIcon.svg"
+                  alt=""
+                  class="icon"
+                />
+              </button>
+            </div>
+
+            <div class="sectionBox">
+              <div class="titleWrap">
+                <h2 class="title">You Receive</h2>
+              </div>
+              <div class="amountWrap">
+                <div class="tokenWrap">
+                  <button class="tokenContent">
+                    <img
+                      src="../assets/images/tokenLogo01.svg"
+                      alt=""
+                      class="tokenLogo"
+                    />
+                    <div class="titleWrap">
+                      <span class="tokenTitle">XPER</span>
+                      <img
+                        src="../assets/icon/arrowLineIcon.svg"
+                        alt=""
+                        class="icon"
+                      />
+                    </div>
+                  </button>
+                  <div class="flexWrap">
+                    <input type="number" class="amount" placeholder="0.0" />
+                    <div class="balanceWrap">
+                      <span>Balance</span>
+                      <p class="balance">0.867987</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="feeWrap">
+              <div class="feeLabel">
+                <span>Fee</span>
+                <img src="../assets/icon/infoIcon.svg" alt="" class="icon" />
+                <div class="tooltip">
+                  This fee covers the cost of the transaction on the blockchain.
+                </div>
+              </div>
+              <div class="feeAmount">
+                <p class="amount active">0.9769</p>
+                <span>USDT</span>
+              </div>
+            </div>
+            <button class="mainBtn active">Connect Wallet</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footerWrap">
+        <p class="copyright">
+          Copyright © 2022 WEB3 SOLUTIONS PTE. LTD. All Rights Reserved
+        </p>
+        <div class="socialLinkWrap">
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon01.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon02.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- modal (settings)-->
+    <div class="modalOverlay">
+      <div class="modal">
+        <div class="modalHeader">
+          <h2 class="title">Settings</h2>
+          <button class="closeBtn">
+            <img src="assets/icon/closeIcon.svg" alt="" />
+          </button>
+        </div>
+        <div class="modalBody">
+          <div class="slippageWrap">
+            <div class="titleWrap">
+              <div class="flexWrap">
+                <h2 class="title">Slippage Tolerance</h2>
+                <div class="iconWrap">
+                  <img src="../assets/icon/infoIcon.svg" alt="" class="icon" />
+                  <div class="tooltip">
+                    <div>
+                      Slippage is the difference between the expected trade
+                      value and the actual value because of asset price changes
+                      and liquidity.
+                    </div>
+                    <div>
+                      If the slippage exceeds your set range, the transaction
+                      will be canceled.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="value warn">0.1%</span>
+            </div>
+            <span class="warnMessage"
+              >Setting a high slippage tolerance can cause someone else to
+              process their transaction first, changing the price for you.</span
+            >
+            <div class="slippageContent">
+              <div class="percentWrap">
+                <button class="slippageBtn active">0.1%</button>
+                <button class="slippageBtn">0.5%</button>
+                <button class="slippageBtn">1.0%</button>
+              </div>
+              <div class="inputWrap">
+                <input
+                  type="number"
+                  name=""
+                  id=""
+                  placeholder="Custom"
+                  class="inputStyle"
+                />
+                <span class="percent">%</span>
+              </div>
+            </div>
+          </div>
+          <div class="btnWrap">
+            <button class="cancleBtn">Cancle</button>
+            <button class="confirmBtn">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="../js/mobileMenu.js"></script>
+<script src="../js/headerSlide.js"></script>

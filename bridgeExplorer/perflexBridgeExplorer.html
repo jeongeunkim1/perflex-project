@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>main</title>
+    <link
+      rel="stylesheet"
+      href="../css/bridgeExplorer/perflexBridgeExplorer.css"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="headerWrap">
+        <div class="headerContent">
+          <div class="headerBox">
+            <div class="flexBasisWrap">
+              <a href="#" class="logoWrap">
+                <img src="../assets/images/logo.png" alt="" class="logo"
+              /></a>
+              <div class="tabMenuWrap">
+                <button class="tab active">Bridge</button>
+                <button class="tab">Swap</button>
+              </div>
+            </div>
+            <button class="menuButton">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </button>
+            <nav class="navMenuWrap">
+              <a href="#" class="navLink inactive">Tokens</a>
+              <a href="#" class="navLink inactive">NFTs</a>
+              <a href="#" class="navLink">Explorer</a>
+            </nav>
+            <div class="headerMenuWrap"></div>
+          </div>
+        </div>
+      </div>
+      <div class="mobileMenu">
+        <div class="mobileMenuContent">
+          <div class="closeIconWrap">
+            <div class="closeIconContent">
+              <div class="closeIcon"></div>
+              <div class="closeIcon"></div>
+            </div>
+          </div>
+          <div class="tabMenuWrap">
+            <button class="tab active">Bridge</button>
+            <button class="tab">Swap</button>
+          </div>
+          <nav class="navMenuWrap">
+            <a href="#" class="navLink">Tokens</a>
+            <a href="#" class="navLink">NFTs</a>
+            <a href="#" class="navLink">Explorer</a>
+          </nav>
+          <div class="socialLinkWrap">
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon01.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon02.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon04.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon02.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mainContent">
+      <section>
+        <div class="sectionWrap">
+          <div class="textWrap">
+            <h1 class="sectionTitle">Explorer: Your Bridge Activity Hub</h1>
+            <h2 class="sectionSubTitle">
+              Explore the latest transactions and activities on the bridge
+              network. Track your assets and stay updated with real-time data
+              and analytics.
+            </h2>
+          </div>
+
+          <div class="analysisWrap">
+            <div class="analysisContent">
+              <div class="iconWrap graph">
+                <img src="../assets/icon/graphIcon.svg" alt="" class="icon" />
+              </div>
+              <div class="analysisTextWrap">
+                <h2 class="title">Total Transactions</h2>
+                <span class="amount">79,172</span>
+              </div>
+            </div>
+            <div class="analysisContent">
+              <div class="iconWrap car">
+                <img src="../assets/icon/carIcon.svg" alt="" class="icon" />
+              </div>
+              <div class="analysisTextWrap">
+                <h2 class="title">Total Quantity NFT[24h]</h2>
+                <span class="amount">79,172</span>
+              </div>
+            </div>
+            <div class="analysisContent">
+              <div class="iconWrap token">
+                <img src="../assets/icon/tokenIcon.svg" alt="" class="icon" />
+              </div>
+              <div class="analysisTextWrap">
+                <h2 class="title">Total Quantity Token[24h]</h2>
+                <span class="amount">79,172</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="searchBox">
+            <div class="searchWrap">
+              <input
+                type="text"
+                placeholder="Search token by name or chain ID"
+                class="searchInput"
+              />
+              <button>
+                <img src="../assets/icon/closeFilledIcon.svg" alt="" />
+              </button>
+              <button>
+                <img src="../assets/icon/searchIcon.svg" alt="" />
+              </button>
+            </div>
+          </div>
+          <div class="tableWrap">
+            <div class="tableContent">
+              <div class="tableHeaderWrap">
+                <h2 class="tableHeaderTitle">Recent Transactions</h2>
+                <div class="tableHeaderFilterWrap">
+                  <button class="tableHeaderFilter active">All</button>
+                  <button class="tableHeaderFilter inactive">Tokens</button>
+                  <button class="tableHeaderFilter inactive">NFTs</button>
+                </div>
+              </div>
+              <div class="tableBodyWrap">
+                <div class="tableBodyContent">
+                  <div class="tableBodyColumnWrap">
+                    <div class="tableBodyColumn type">Types</div>
+                    <div class="tableBodyColumn timestamp">Timestamp</div>
+                    <div class="tableBodyColumn account">Account</div>
+                    <div class="tableBodyColumn from">From</div>
+                    <div class="tableBodyColumn to">To</div>
+                    <div class="tableBodyColumn status">
+                      Status
+                      <img
+                        src="../assets/icon/infoIcon.svg"
+                        alt=""
+                        class="infoIcon"
+                      />
+                    </div>
+                  </div>
+                  <div class="rowWrap">
+                    <div class="tableBodyRowWrap">
+                      <div class="tableBodyRow type">Tokens</div>
+                      <div class="tableBodyRow timestamp">
+                        2024-06-25 14:06:17
+                      </div>
+                      <div class="tableBodyRow account">hx9cs...93kde</div>
+                      <a href="#" class="tableBodyRow from">
+                        <img
+                          src="../assets/images/chainLogo01.svg"
+                          alt=""
+                          class="logo"
+                        />
+                        hx9cs...93kde</a
+                      >
+                      <a href="#" class="tableBodyRow to">
+                        <img
+                          src="../assets/images/chainLogo02.svg"
+                          alt=""
+                          class="logo"
+                        />hx9cs...93kde</a
+                      >
+                      <div class="tableBodyRow status pending">
+                        <img src="../assets/icon/tablePendingIcon.svg" alt="" />
+                        Pending
+                      </div>
+                    </div>
+                    <div class="tableBodyRowWrap">
+                      <div class="tableBodyRow type">NFTs</div>
+                      <div class="tableBodyRow timestamp">
+                        2024-06-25 14:06:17
+                      </div>
+                      <div class="tableBodyRow account">hx9cs...93kde</div>
+                      <a href="#" class="tableBodyRow from">
+                        <img
+                          src="../assets/images/chainLogo02.svg"
+                          alt=""
+                          class="logo"
+                        />hx9cs...93kde</a
+                      >
+                      <a href="#" class="tableBodyRow to">
+                        <img
+                          src="../assets/images/chainLogo01.svg"
+                          alt=""
+                          class="logo"
+                        />hx9cs...93kde</a
+                      >
+                      <div class="tableBodyRow status completed">
+                        <img
+                          src="../assets/icon/tableCompleteIcon.svg"
+                          alt=""
+                        />
+                        Completed
+                      </div>
+                    </div>
+                    <div class="tableBodyRowWrap">
+                      <div class="tableBodyRow type">Tokens</div>
+                      <div class="tableBodyRow timestamp">
+                        2024-06-25 14:06:17
+                      </div>
+                      <div class="tableBodyRow account">hx9cs...93kde</div>
+                      <a href="#" class="tableBodyRow from">
+                        <img
+                          src="../assets/images/chainLogo01.svg"
+                          alt=""
+                          class="logo"
+                        />hx9cs...93kde</a
+                      >
+                      <a href="#" class="tableBodyRow to inactive">
+                        <img
+                          src="../assets/images/chainLogo02.svg"
+                          alt=""
+                          class="logo"
+                        />--</a
+                      >
+                      <div class="tableBodyRow status failed">
+                        <img src="../assets/icon/tableFailedIcon.svg" alt="" />
+                        Failed
+                      </div>
+                    </div>
+                    <div class="tableBodyRowWrap">
+                      <div class="tableBodyRow type">Tokens</div>
+                      <div class="tableBodyRow timestamp">
+                        2024-06-25 14:06:17
+                      </div>
+                      <div class="tableBodyRow account">hx9cs...93kde</div>
+                      <a href="#" class="tableBodyRow from">
+                        <img
+                          src="../assets/images/chainLogo01.svg"
+                          alt=""
+                          class="logo"
+                        />hx9cs...93kde</a
+                      >
+                      <a href="#" class="tableBodyRow to">
+                        <img
+                          src="../assets/images/chainLogo02.svg"
+                          alt=""
+                          class="logo"
+                        />hx9cs...93kde</a
+                      >
+                      <div class="tableBodyRow status cancelled">
+                        <img src="../assets/icon/tableCancelIcon.svg" alt="" />
+                        Cancelled
+                      </div>
+                    </div>
+                    <div class="tableBodyRowWrap">
+                      <div class="tableBodyRow type">Tokens</div>
+                      <div class="tableBodyRow timestamp">
+                        2024-06-25 14:06:17
+                      </div>
+                      <div class="tableBodyRow account">hx9cs...93kde</div>
+                      <a href="#" class="tableBodyRow from">
+                        <img
+                          src="../assets/images/chainLogo01.svg"
+                          alt=""
+                          class="logo"
+                        />hx9cs...93kde</a
+                      >
+                      <a href="#" class="tableBodyRow to">
+                        <img
+                          src="../assets/images/chainLogo02.svg"
+                          alt=""
+                          class="logo"
+                        />hx9cs...93kde</a
+                      >
+                      <div class="tableBodyRow status inProgress">
+                        <img
+                          src="../assets/icon/tableProgressIcon.svg"
+                          alt=""
+                        />
+
+                        In Progress
+                      </div>
+                    </div>
+                    <div class="tableBodyRowWrap">
+                      <div class="tableBodyRow type">Tokens</div>
+                      <div class="tableBodyRow timestamp">
+                        2024-06-25 14:06:17
+                      </div>
+                      <div class="tableBodyRow account">hx9cs...93kde</div>
+                      <a href="#" class="tableBodyRow from">
+                        <img
+                          src="../assets/images/chainLogo01.svg"
+                          alt=""
+                          class="logo"
+                        />hx9cs...93kde</a
+                      >
+                      <a href="#" class="tableBodyRow to">
+                        <img
+                          src="../assets/images/chainLogo02.svg"
+                          alt=""
+                          class="logo"
+                        />hx9cs...93kde</a
+                      >
+                      <div class="tableBodyRow status inProgress">
+                        <img
+                          src="../assets/icon/tableProgressIcon.svg"
+                          alt=""
+                        />
+                        In Progress
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tableFooterWrap">
+                <div class="tableFooterPaginationInfo">page 1 of 10</div>
+                <div class="tableFooterPaginationControls">
+                  <button class="tableFooterPageBtn firstPage">
+                    <img
+                      src="../assets/icon/doubleArrowLineIcon.svg"
+                      alt=""
+                      class="icon inactive"
+                    />
+                  </button>
+                  <button class="tableFooterPageBtn prevPage">
+                    <img
+                      src="../assets/icon/arrowLineIcon.svg"
+                      alt=""
+                      class="icon inactive"
+                    />
+                  </button>
+                  <button class="tableFooterPageBtn nextPage">
+                    <img
+                      src="../assets/icon/arrowLineIcon.svg"
+                      alt=""
+                      class="icon active"
+                    />
+                  </button>
+                  <button class="tableFooterPageBtn lastPage">
+                    <img
+                      src="../assets/icon/doubleArrowLineIcon.svg"
+                      alt=""
+                      class="icon active"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footerWrap">
+        <p class="copyright">
+          Copyright © 2022 WEB3 SOLUTIONS PTE. LTD. All Rights Reserved
+        </p>
+        <div class="socialLinkWrap">
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon01.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon02.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon04.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon02.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script src="../js/mobileMenu.js"></script>
+<script src="../js/headerSlide.js"></script>
