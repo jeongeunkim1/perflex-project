@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main</title>
+    <link
+      rel="stylesheet"
+      href="../css/bridgeToken/perflexBridgeTokenOtherWallet.css"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="headerWrap">
+        <div class="headerContent">
+          <div class="headerBox">
+            <div class="flexBasisWrap">
+              <a href="#" class="logoWrap">
+                <img src="../assets/images/logo.svg" alt="" class="logo"
+              /></a>
+              <div class="tabMenuWrap">
+                <button class="tab active">Bridge</button>
+                <button class="tab">Swap</button>
+              </div>
+            </div>
+            <button class="menuButton">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </button>
+            <nav class="navMenuWrap">
+              <a href="#" class="navLink">Tokens</a>
+              <a href="#" class="navLink inactive">NFTs</a>
+              <a href="#" class="navLink inactive">Explorer</a>
+            </nav>
+            <div class="headerMenuWrap">
+              <button class="buttonContent">
+                <img src="../assets/icon/moreIcon.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mobileMenu">
+        <div class="mobileMenuContent">
+          <div class="closeIconWrap">
+            <div class="closeIconContent">
+              <div class="closeIcon"></div>
+              <div class="closeIcon"></div>
+            </div>
+          </div>
+          <div class="tabMenuWrap">
+            <button class="tab active">Bridge</button>
+            <button class="tab">Swap</button>
+          </div>
+          <nav class="navMenuWrap">
+            <a href="#" class="navLink">Tokens</a>
+            <a href="#" class="navLink">NFTs</a>
+            <a href="#" class="navLink">Explorer</a>
+          </nav>
+          <div class="socialLinkWrap">
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon01.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon02.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mainContent">
+      <section>
+        <div class="sectionWrap">
+          <div class="sectionContent">
+            <div class="textWrap">
+              <h1 class="sectionTitle">Bridge</h1>
+              <h2 class="sectionSubTitle">Easily Send Tokens Between Chains</h2>
+            </div>
+            <div class="stepWrap">
+              <div class="step">
+                <div class="circle active">1</div>
+                <div class="text active">Connect Source Wallet</div>
+              </div>
+              <div class="step">
+                <div class="circle"><span>2</span></div>
+                <div class="text">Connect Destination Wallet</div>
+              </div>
+              <div class="step">
+                <div class="circle"><span>3</span></div>
+                <div class="text">Enter Amount and Transfer</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sectionContent">
+            <div class="fromToWrap">
+              <div class="fromWrap">
+                <h2 class="title">From</h2>
+                <div class="fromContent">
+                  <div class="chainWrap">
+                    <button class="chainContent">
+                      <img
+                        src="../assets/images/chainLogo01.svg"
+                        alt=""
+                        class="chainLogo"
+                      />
+                      <div class="titleWrap">
+                        <span class="chainTitle">zkSync</span>
+                        <img
+                          src="../assets/icon/arrowLineIcon.svg"
+                          alt=""
+                          class="icon"
+                        />
+                      </div>
+                    </button>
+                    <div class="addressWrap">
+                      <!-- <button class="connectBtn active">Connect</button> -->
+                      <button class="addressBtn">hxe04...11n78</button>
+                      <div class="tooltip">Disconnect</div>
+                    </div>
+                  </div>
+
+                  <div class="amountWrap">
+                    <div class="tokenWrap">
+                      <input type="number" class="amount" placeholder="0.0" />
+                      <button class="tokenContent">
+                        <img
+                          src="../assets/images/tokenLogo01.svg"
+                          alt=""
+                          class="tokenLogo"
+                        />
+                        <div class="titleWrap">
+                          <span class="tokenTitle">XPER</span>
+                          <img
+                            src="../assets/icon/arrowLineIcon.svg"
+                            alt=""
+                            class="icon"
+                          />
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="totalWrap">
+                    <div class="totalContent">
+                      <span>Available</span>
+                      <p class="inactive">-</p>
+                    </div>
+                    <button class="maxBtn active">MAX</button>
+                  </div>
+                </div>
+              </div>
+              <div class="toWrap">
+                <div class="walletTypeWrap">
+                  <h2 class="title">To</h2>
+                  <button class="dropDownWrap">
+                    My Wallet
+                    <img src="../assets/icon/downArrowFilledIcon.svg" alt="" />
+                  </button>
+                </div>
+                <div class="toContent">
+                  <div class="chainWrap">
+                    <button class="chainContent">
+                      <img
+                        src="../assets/images/chainLogo01.svg"
+                        alt=""
+                        class="chainLogo"
+                      />
+                      <div class="titleWrap">
+                        <span class="chainTitle">zkSync</span>
+                        <img
+                          src="../assets/icon/arrowLineIcon.svg"
+                          alt=""
+                          class="icon"
+                        />
+                      </div>
+                    </button>
+                  </div>
+
+                  <div class="otherWalletWrap">
+                    <input
+                      type="text"
+                      class="address"
+                      placeholder="Enter the other wallet address"
+                    />
+                  </div>
+                  <p class="errorMessage">
+                    Please enter a valid address that starts with '0x' and is 42
+                    characters long.
+                  </p>
+                </div>
+              </div>
+              <button class="mainBtn active">Connect Wallet</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footerWrap">
+        <p class="copyright">
+          Copyright © 2022 WEB3 SOLUTIONS PTE. LTD. All Rights Reserved
+        </p>
+        <div class="socialLinkWrap">
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon01.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon02.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script src="../js/mobileMenu.js"></script>
+<script src="../js/headerSlide.js"></script>

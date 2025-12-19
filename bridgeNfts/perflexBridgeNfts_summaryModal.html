@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main</title>
+    <link
+      rel="stylesheet"
+      href="../css/bridgeNfts/perflexBridgeNfts_summaryModal.css"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="headerWrap">
+        <div class="headerContent">
+          <div class="headerBox">
+            <div class="flexBasisWrap">
+              <a href="#" class="logoWrap">
+                <img src="../assets/images/logo.svg" alt="" class="logo"
+              /></a>
+              <div class="tabMenuWrap">
+                <button class="tab active">Bridge</button>
+                <button class="tab">Swap</button>
+              </div>
+            </div>
+            <button class="menuButton">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </button>
+            <nav class="navMenuWrap">
+              <a href="#" class="navLink inactive">Tokens</a>
+              <a href="#" class="navLink">NFTs</a>
+              <a href="#" class="navLink inactive">Explorer</a>
+            </nav>
+            <div class="headerMenuWrap">
+              <button class="buttonContent">
+                <img src="../assets/icon/moreIcon.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mobileMenu">
+        <div class="mobileMenuContent">
+          <div class="closeIconWrap">
+            <div class="closeIconContent">
+              <div class="closeIcon"></div>
+              <div class="closeIcon"></div>
+            </div>
+          </div>
+          <div class="tabMenuWrap">
+            <button class="tab active">Bridge</button>
+            <button class="tab">Swap</button>
+          </div>
+          <nav class="navMenuWrap">
+            <a href="#" class="navLink">Tokens</a>
+            <a href="#" class="navLink">NFTs</a>
+            <a href="#" class="navLink">Explorer</a>
+          </nav>
+          <div class="socialLinkWrap">
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon01.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon02.svg" alt=""
+            /></a>
+            <a href="#" class="socialLink"
+              ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mainContent">
+      <section>
+        <div class="sectionWrap">
+          <div class="sectionContent">
+            <div class="textWrap">
+              <h1 class="sectionTitle">Bridge</h1>
+              <h2 class="sectionSubTitle">Easily Send NFTs Between Chains</h2>
+            </div>
+            <div class="stepWrap">
+              <div class="step">
+                <div class="circle active">1</div>
+                <div class="text active">Connect Source Wallet</div>
+              </div>
+              <div class="step">
+                <div class="circle"><span>2</span></div>
+                <div class="text">Select NFT and Target Network</div>
+              </div>
+              <div class="step">
+                <div class="circle"><span>3</span></div>
+                <div class="text">Confirm and Transfer</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sectionContent">
+            <div class="fromToWrap">
+              <div class="fromWrap">
+                <h2 class="title">From</h2>
+                <div class="fromContent">
+                  <div class="chainWrap">
+                    <button class="chainContent">
+                      <img
+                        src="../assets/images/chainLogo01.svg"
+                        alt=""
+                        class="chainLogo"
+                      />
+                      <div class="titleWrap">
+                        <span class="chainTitle">zkSync</span>
+                        <img
+                          src="../assets/icon/arrowLineIcon.svg"
+                          alt=""
+                          class="icon"
+                        />
+                      </div>
+                    </button>
+                    <div class="addressWrap">
+                      <!-- <button class="connectBtn active">Connect</button> -->
+                      <button class="addressBtn">hxe04...11n78</button>
+                      <div class="tooltip">Disconnect</div>
+                    </div>
+                  </div>
+
+                  <!-------------------Before NFT select------------------->
+                  <!-- <div class="amountWrap">
+                    <button class="selectNft">
+                      <div class="flexWrap">
+                        <span class="tokenTitle active">Select your NFTs</span>
+                      </div>
+                      <img
+                        src="../assets/icon/arrowLineIcon.svg"
+                        alt=""
+                        class="icon"
+                      />
+                    </button>
+                  </div> -->
+
+                  <!-------------------After NFT select------------------->
+                  <div class="amountWrap">
+                    <button class="selectNft">
+                      <div class="flexWrap">
+                        <img
+                          src="../assets/images/nfts01.jpg"
+                          alt=""
+                          class="nftImage"
+                        />
+                        <span class="tokenTitle active">#12341223</span>
+                      </div>
+                      <img
+                        src="../assets/icon/closeFilledIcon.svg"
+                        alt=""
+                        class="closeIcon"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="toWrap">
+                <div class="walletTypeWrap">
+                  <h2 class="title">To</h2>
+                  <button class="dropDownWrap">
+                    My Wallet
+                    <img src="../assets/icon/downArrowFilledIcon.svg" alt="" />
+                  </button>
+                </div>
+                <div class="toContent">
+                  <div class="chainWrap">
+                    <button class="chainContent">
+                      <img
+                        src="../assets/images/chainLogo02.svg"
+                        alt=""
+                        class="chainLogo"
+                      />
+                      <div class="titleWrap">
+                        <span class="chainTitle">HAVAH</span>
+                        <img
+                          src="../assets/icon/arrowLineIcon.svg"
+                          alt=""
+                          class="icon"
+                        />
+                      </div>
+                    </button>
+                    <button class="connectBtn active">Connect</button>
+                    <!-- <button class="addressBtn">hxe04...11n78</button> -->
+                  </div>
+                  <!-- <div class="otherWalletWrap">
+                    <input
+                      type="text"
+                      class="address"
+                      placeholder="Enter the other wallet address"
+                    />
+                    <img src="../assets/icon/qrCodeIcon.svg" alt="" class="icon" />
+                  </div> -->
+                </div>
+              </div>
+              <button class="mainBtn active">Connect Wallet</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footerWrap">
+        <p class="copyright">
+          Copyright © 2022 WEB3 SOLUTIONS PTE. LTD. All Rights Reserved
+        </p>
+        <div class="socialLinkWrap">
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon01.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon02.svg" alt=""
+          /></a>
+          <a href="#" class="socialLink"
+            ><img src="../assets/icon/socialLinkIcon03.svg" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- modal (summary)-->
+    <div class="modalOverlay">
+      <div class="modal">
+        <div class="modalHeader">
+          <h2 class="title">Summary</h2>
+          <button class="closeBtn">
+            <img src="../assets/icon/closeIcon.svg" alt="" />
+          </button>
+        </div>
+        <div class="modalBody">
+          <div class="summaryWrap">
+            <div class="summaryContent">
+              <h2 class="title">From</h2>
+              <div class="chainWrap">
+                <button class="chainContent">
+                  <img
+                    src="../assets/images/chainLogo01.svg"
+                    alt=""
+                    class="chainLogo"
+                  />
+                  <div class="titleWrap">
+                    <span class="chainTitle">zkSync</span>
+                  </div>
+                </button>
+                <button class="addressBtn">hxe04...11n78</button>
+              </div>
+            </div>
+            <div class="summaryContent">
+              <h2 class="title">To</h2>
+              <div class="chainWrap">
+                <button class="chainContent">
+                  <img
+                    src="../assets/images/chainLogo02.svg"
+                    alt=""
+                    class="chainLogo"
+                  />
+                  <div class="titleWrap">
+                    <span class="chainTitle">HAVAH</span>
+                  </div>
+                </button>
+                <button class="addressBtn">eyw99...11n78</button>
+              </div>
+            </div>
+            <div class="summaryContent">
+              <h2 class="title">Selected NFT</h2>
+              <div class="chainWrap">
+                <button class="chainContent">
+                  <img
+                    src="../assets/images/nfts01.jpg"
+                    alt=""
+                    class="chainLogo"
+                  />
+                  <div class="titleWrap">
+                    <span class="chainTitle">This is NFT Name</span>
+                  </div>
+                </button>
+                <span class="tokenId">#1234323</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="infoWrap">
+            <div class="flexWrap">
+              <span>My Balance</span>
+              <div class="priceWrap">
+                <p>0.1</p>
+                <span>ETH</span>
+              </div>
+            </div>
+            <div class="flexWrap">
+              <span>Transaction Fee</span>
+              <div class="priceWrap">
+                <p>0.1</p>
+                <span>ETH</span>
+              </div>
+            </div>
+
+            <div class="flexWrap afterFee">
+              <span>Net Balance (after fee)</span>
+              <div class="priceWrap">
+                <p>- 0.2</p>
+                <span>ETH</span>
+              </div>
+            </div>
+
+            <div class="flexWrap warnMessage">
+              <p>Not enough funds for fees. Please add more.</p>
+            </div>
+
+            <div class="division"></div>
+
+            <div class="flexWrap">
+              <span>Transfer amount</span>
+              <div class="priceWrap">
+                <p>0.1</p>
+                <span>ETH</span>
+              </div>
+            </div>
+            <div class="flexWrap">
+              <span>Commission Fee</span>
+              <div class="priceWrap">
+                <p>0.1</p>
+                <span>ETH</span>
+              </div>
+            </div>
+            <div class="flexWrap">
+              <span>Destination Fee</span>
+              <div class="priceWrap">
+                <p>0.1</p>
+                <span>ETH</span>
+              </div>
+            </div>
+
+            <div class="flexWrap afterFee">
+              <span>Receivable Amount</span>
+              <div class="priceWrap">
+                <p>0.2</p>
+                <span>ETH</span>
+              </div>
+            </div>
+
+            <div class="flexWrap warnMessage">
+              <p>Not enough funds for fees. Please add more.</p>
+            </div>
+          </div>
+
+          <div class="btnWrap">
+            <button class="cancleBtn">Cancel</button>
+            <button class="confirmBtn">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="../js/mobileMenu.js"></script>
+<script src="../js/headerSlide.js"></script>
