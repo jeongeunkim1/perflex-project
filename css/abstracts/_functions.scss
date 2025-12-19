@@ -1,0 +1,3 @@
+@function getFlexValue($key) {
+  @return map-get($flex-map, $key)
+}

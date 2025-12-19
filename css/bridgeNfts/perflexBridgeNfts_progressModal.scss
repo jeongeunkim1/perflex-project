@@ -1,0 +1,963 @@
+@import "../main.scss";
+@import "../abstracts/mixins";
+@import "../abstracts/colors";
+
+@keyframes scrollWheel {
+  68% {
+    top: 20%;
+    height: 6px;
+  }
+  76% {
+    top: 30%;
+    height: 12px;
+  }
+
+  84%,
+  92% {
+    top: 70%;
+    height: 6px;
+  }
+}
+
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+//header
+.headerWrap {
+  @include flexBox();
+  width: 100%;
+  height: 80px;
+
+  @include mobile {
+    height: 56px;
+    display: block;
+  }
+
+  .headerContent {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 80px;
+    @include mobile {
+      height: 60px;
+    }
+
+    .headerBox {
+      @include setMaxWidth;
+      @include flexBox();
+      width: 100%;
+      height: 80px;
+
+      @include mobile {
+        height: 60px;
+        justify-content: space-between;
+      }
+
+      .flexBasisWrap {
+        @include flexBox($jc: start);
+        gap: 32px;
+        flex-basis: 30%;
+        .logoWrap {
+          @include mobile {
+            flex-basis: auto;
+          }
+          .logo {
+            display: block;
+            width: 130px;
+            height: auto;
+            @include mobile {
+              width: 120px;
+            }
+          }
+        }
+
+        .tabMenuWrap {
+          @include mobile {
+            display: none;
+          }
+          @include flexBox();
+          padding: 0 4px;
+          background-color: var(--theme__background-color-03);
+          height: 40px;
+          border-radius: 50px;
+          .tab {
+            @include setEngFont;
+
+            padding: 0 16px;
+            height: 32px;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--theme__inactive-color);
+            border-radius: 50px;
+
+            &.active {
+              color: var(--color-white);
+              background: var(--color-primary-gradient);
+            }
+          }
+        }
+      }
+      .menuButton {
+        @include flexBox(column, between, start);
+        display: none;
+        padding: 8px;
+        gap: 4.8px;
+        @include mobile {
+          display: flex;
+        }
+        .line {
+          width: 22px;
+          height: 2px;
+          background-color: var(--color-white);
+        }
+      }
+
+      .navMenuWrap {
+        @include flexBox();
+        gap: 24px;
+        flex: 1;
+        text-align: center;
+        @include mobile {
+          display: none;
+        }
+
+        .navLink {
+          @include setEngFont;
+          padding: 8px 16px;
+          color: var(--color-white);
+          font-size: 1.6rem;
+          font-weight: 600;
+          transition: all 0.15s ease;
+
+          &.inactive {
+            color: var(--theme__inactive-color);
+            &:hover {
+              transition: all 0.15s ease;
+              color: var(--color-white);
+            }
+          }
+        }
+      }
+
+      .headerMenuWrap {
+        @include flexBox($jc: end);
+        flex-basis: 30%;
+
+        @include mobile {
+          display: none;
+        }
+
+        .icon {
+          width: 24px;
+          height: 24px;
+        }
+
+        .buttonContent {
+          @include flexBox();
+          @include setEngFont;
+          padding: 0 8px;
+          height: 40px;
+          width: 40px;
+          background-color: var(--theme__background-color-03);
+          border-radius: 6px;
+          gap: 8px;
+          font-size: 1.5rem;
+          color: var(--color-white);
+          font-weight: 500;
+          &:first-child {
+            padding: 0 16px;
+          }
+          &:hover {
+            background-color: var(--theme__background-color-02);
+          }
+        }
+      }
+    }
+  }
+}
+
+//mobileHeader
+.mobileMenu {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--theme__background-color-01);
+  z-index: 100;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  transform: translateY(-100%);
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mobileMenuContent {
+    @include flexBox($jc: start, $ai: start, $dir: column);
+    padding: 16% 20px;
+    display: flex;
+    height: 100%;
+    gap: 40px;
+
+    .closeIconWrap {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+
+      .closeIconContent {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        .closeIcon {
+          margin-top: 12px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 24px; /* 라인의 너비 */
+          height: 2px; /* 라인의 높이 */
+          background-color: var(--color-white);
+          &:first-child {
+            transform: rotate(45deg); /* 첫 번째 라인을 45도 회전 */
+          }
+          &:last-child {
+            transform: rotate(-45deg); /* 두 번째 라인을 -45도 회전 */
+          }
+        }
+      }
+    }
+
+    .tabMenuWrap {
+      @include flexBox();
+      padding: 0 4px;
+      background-color: var(--theme__background-color-03);
+      height: 40px;
+      border-radius: 50px;
+      .tab {
+        @include setEngFont;
+        padding: 0 16px;
+        height: 32px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--theme__inactive-color);
+        border-radius: 50px;
+
+        &.active {
+          color: var(--color-white);
+          background: var(--color-primary-gradient);
+        }
+      }
+    }
+
+    .navMenuWrap {
+      @include flexBox($ai: start, $dir: column);
+      @include setEngFont;
+      gap: 40px;
+      width: 100%;
+
+      .navLink {
+        color: var(--color-white);
+        padding: 8px 0;
+        font-size: 2.4rem;
+        font-weight: 600;
+      }
+    }
+
+    .socialLinkWrap {
+      @include flexBox($ai: end);
+      gap: 32px;
+      flex: 1;
+      width: 100%;
+
+      .socialLink {
+        opacity: 0.5;
+        transition: all 0.2s ease;
+
+        &:hover {
+          opacity: 1;
+          transition: all 0.2s ease;
+        }
+      }
+    }
+  }
+}
+
+//main
+.mainContent {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - var(--header__height) - 80px);
+  @include mobile {
+    height: auto;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -50%;
+    width: 160%;
+    height: 160%;
+    background: radial-gradient(circle, #4904dd44, #1f0836 80%);
+    transform: translate(-50%, -50%);
+    filter: blur(200px);
+    z-index: -1;
+    border-radius: 50%;
+  }
+
+  .sectionWrap {
+    @include setMaxWidth;
+    @include flexBox();
+    @include mobile {
+      flex-direction: column;
+      height: 100%;
+    }
+    width: 100%;
+    height: calc(100vh - var(--header__height) - 80px);
+
+    .sectionContent {
+      @include mobile {
+        margin-top: 32px;
+        padding: 0;
+        min-height: auto;
+      }
+      width: 100%;
+      min-height: 560px;
+      flex-basis: 100%;
+      padding: 40px 32px;
+      &:first-child {
+        @include mobile {
+          margin-top: 24px;
+        }
+        flex-basis: 88%;
+      }
+      .textWrap {
+        @include flexBox($dir: column, $jc: start, $ai: start);
+        @include mobile {
+          gap: 12px;
+        }
+        gap: 16px;
+        .sectionTitle {
+          @include setEngFont;
+          @include mobile {
+            font-size: 2.8rem;
+          }
+          color: var(--color-white);
+          font-size: 3.2rem;
+          font-weight: 700;
+        }
+        .sectionSubTitle {
+          @include mobile {
+            font-size: 1.7rem;
+          }
+          color: var(--color-grey-02);
+          font-size: 2rem;
+          font-weight: 400;
+        }
+      }
+
+      .stepWrap {
+        @include flexBox($dir: column, $jc: start, $ai: start);
+        @include mobile {
+          margin-top: 24px;
+          gap: 24px;
+        }
+        margin-top: 40px;
+        gap: 48px;
+        .step {
+          @include flexBox($jc: start);
+          gap: 16px;
+          position: relative;
+
+          &:not(:last-child) ::before {
+            @include mobile {
+              left: 12px;
+              width: 1px;
+              height: 60px;
+            }
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 13px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            height: 80px;
+            background: var(--color-border);
+          }
+        }
+
+        .circle {
+          @include flexBox();
+          @include mobile {
+            width: 24px;
+            height: 24px;
+            font-size: 1.2rem;
+          }
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          background: var(--theme__inactive-background-color);
+          color: var(--theme__inactive-color);
+          font-size: 1.5rem;
+
+          &.active {
+            color: var(--color-white);
+            background: #21035f;
+            border: 1.5px solid transparent;
+            background-image: linear-gradient(#21035f, #3d1975),
+              var(--color-primary-gradient);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+          }
+        }
+
+        .text {
+          @include mobile {
+            font-size: 1.5rem;
+          }
+          color: var(--theme__inactive-color);
+          font-size: 1.9rem;
+          font-weight: 400;
+          &.active {
+            color: var(--color-white);
+          }
+        }
+      }
+
+      .fromToWrap {
+        @include mobile {
+          background-color: unset;
+          padding: 0;
+        }
+        background-color: var(--theme__background-color-02);
+        padding: 40px 32px;
+        border-radius: 16px;
+        box-shadow: rgba(7, 6, 10, 1) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+        .fromWrap {
+          .title {
+            @include mobile {
+              font-size: 1.5rem;
+              line-height: 2.5rem;
+            }
+            color: var(--color-white);
+            font-size: 1.7rem;
+            font-weight: 500;
+            line-height: 2.9rem;
+          }
+          .fromContent {
+            @include mobile {
+              margin-top: 8px;
+              border-radius: 6px;
+              padding: 12px;
+            }
+            margin-top: 12px;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: var(--theme__background-color-03);
+
+            .chainWrap {
+              @include flexBox($jc: between);
+              @include mobile {
+                padding-bottom: 12px;
+              }
+              padding-bottom: 16px;
+              border-bottom: 1px solid var(--color-border);
+              .chainContent {
+                @include flexBox($jc: start);
+                @include mobile {
+                  gap: 8px;
+                }
+                gap: 12px;
+                .chainLogo {
+                  width: 32px;
+                  height: 32px;
+                  border-radius: 4px;
+                }
+
+                .titleWrap {
+                  @include flexBox($jc: start);
+
+                  gap: 4px;
+                  .chainTitle {
+                    @include mobile {
+                      font-size: 1.5rem;
+                    }
+                    color: var(--color-white);
+                    font-size: 1.7rem;
+                    font-weight: 500;
+                  }
+                  .icon {
+                    @include mobile {
+                      width: 18px;
+                      height: 18px;
+                    }
+                    width: 24px;
+                    height: 24px;
+                  }
+                }
+              }
+              .addressWrap {
+                position: relative;
+
+                .connectBtn {
+                  @include mobile {
+                    font-size: 1.3rem;
+                    height: 32px;
+                  }
+                  padding: 8px 16px;
+                  background-color: var(--color-primary);
+                  color: var(--color-white);
+                  font-size: 1.5rem;
+                  font-weight: 500;
+                  border-radius: 6px;
+                }
+
+                .addressBtn {
+                  @include mobile {
+                    font-size: 1.3rem;
+                    height: 32px;
+                  }
+                  padding: 8px 16px;
+                  color: var(--color-white);
+                  font-size: 1.5rem;
+                  font-weight: 500;
+                  background-color: var(--theme__background-color-05);
+                  border-radius: 6px;
+                  position: relative;
+
+                  &:hover + .tooltip {
+                    visibility: visible;
+                    opacity: 1;
+                  }
+
+                  &:hover {
+                    background-color: var(--theme__background-color-04);
+                  }
+                }
+
+                .tooltip {
+                  visibility: hidden;
+                  background-color: var(--color-grey-03);
+
+                  color: var(--color-grey-01);
+                  font-size: 1.3rem;
+                  font-weight: 500;
+                  padding: 8px 12px;
+                  text-align: center;
+                  border-radius: 5px;
+                  position: absolute;
+                  z-index: 1;
+                  top: -48px;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  width: max-content;
+                  opacity: 0;
+                  transition: opacity 0.3s;
+                  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+                    rgba(17, 17, 26, 0.1) 0px 16px 56px,
+                    rgba(17, 17, 26, 0.1) 0px 24px 80px;
+
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: var(--color-grey-03) transparent transparent
+                      transparent;
+                  }
+                }
+              }
+            }
+
+            .amountWrap {
+              @include mobile {
+                margin-top: 12px;
+              }
+              margin-top: 16px;
+
+              .selectNft {
+                @include flexBox($jc: between);
+                width: 100%;
+
+                .flexWrap {
+                  display: flex;
+                  gap: 12px;
+                  .tokenTitle {
+                    @include mobile {
+                      font-size: 1.5rem;
+                    }
+                    color: var(--theme__inactive-color);
+                    font-size: 1.7rem;
+                    font-weight: 500;
+                    line-height: 3.2rem;
+
+                    &.active {
+                      color: var(--color-white);
+                    }
+                  }
+                  .nftImage {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 4px;
+                  }
+                }
+                .icon {
+                  @include mobile {
+                    width: 18px;
+                    height: 18px;
+                  }
+                  width: 24px;
+                  height: 24px;
+                }
+
+                .closeIcon {
+                  width: 18px;
+                  height: 18px;
+                }
+              }
+            }
+          }
+        }
+
+        .toWrap {
+          @include mobile {
+            margin-top: 24px;
+          }
+          margin-top: 32px;
+          .walletTypeWrap {
+            @include flexBox($jc: between);
+            .title {
+              @include mobile {
+                font-size: 1.5rem;
+              }
+              color: var(--color-white);
+              font-size: 1.7rem;
+              font-weight: 500;
+            }
+            .dropDownWrap {
+              @include flexBox();
+              @include mobile {
+                font-size: 1.3rem;
+                height: 28px;
+                padding: 0 10px;
+              }
+              height: 34px;
+              padding: 0 12px;
+              gap: 2px;
+              color: var(--color-white);
+              font-size: 1.5rem;
+              font-weight: 400;
+              border: 1px solid var(--color-border);
+              border-radius: 6px;
+              transition: 0.15s all ease;
+
+              &:hover {
+                border: 1px solid var(--color-grey-02);
+                transition: 0.15s all ease;
+              }
+            }
+          }
+          .toContent {
+            @include mobile {
+              margin-top: 8px;
+              border-radius: 6px;
+              padding: 12px;
+            }
+            margin-top: 12px;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: var(--theme__background-color-03);
+
+            .chainWrap {
+              @include flexBox($jc: between);
+              .chainContent {
+                @include flexBox($jc: start);
+                @include mobile {
+                  gap: 8px;
+                }
+                gap: 12px;
+                .chainLogo {
+                  width: 32px;
+                  height: 32px;
+                  border-radius: 4px;
+                }
+
+                .titleWrap {
+                  @include flexBox($jc: start);
+                  gap: 4px;
+                  .chainTitle {
+                    @include mobile {
+                      font-size: 1.5rem;
+                    }
+                    color: var(--color-white);
+                    font-size: 1.7rem;
+                    font-weight: 500;
+                  }
+                  .icon {
+                    @include mobile {
+                      width: 18px;
+                      height: 18px;
+                    }
+                    width: 24px;
+                    height: 24px;
+                  }
+                }
+              }
+
+              .connectBtn {
+                @include mobile {
+                  font-size: 1.3rem;
+                  height: 32px;
+                }
+                padding: 8px 16px;
+                background-color: var(--theme__inactive-background-color);
+                color: var(--theme__inactive-color);
+                font-size: 1.5rem;
+                font-weight: 500;
+                border-radius: 6px;
+                &.active {
+                  background-color: var(--color-primary);
+                  color: var(--color-white);
+                  transition: all 0.15s ease;
+
+                  &:hover {
+                    background-color: var(--color-primary-inactive);
+                    transition: all 0.15s ease;
+                  }
+                }
+              }
+
+              .addressBtn {
+                @include mobile {
+                  font-size: 1.3rem;
+                  height: 32px;
+                }
+                padding: 8px 16px;
+                color: var(--color-white);
+                font-size: 1.5rem;
+                font-weight: 500;
+                border: 1px solid var(--color-grey-03);
+                border-radius: 6px;
+              }
+            }
+
+            .otherWalletWrap {
+              @include flexBox($jc: between);
+              gap: 16px;
+              .address {
+                width: 100%;
+                color: var(--color-white);
+                font-size: 1.7rem;
+                font-weight: 500;
+                &::placeholder {
+                  font-weight: 400;
+                  color: var(--theme__inactive-color);
+                }
+              }
+              .icon {
+                display: none;
+              }
+            }
+          }
+        }
+        .mainBtn {
+          @include mobile {
+            margin-bottom: 40px;
+            font-size: 1.5rem;
+            height: 50px;
+            border-radius: 6px;
+          }
+          padding: 0 16px;
+          height: 56px;
+          margin-top: 40px;
+          width: 100%;
+          font-size: 1.7rem;
+          font-weight: 500;
+          color: var(--theme__inactive-color);
+          background-color: var(--theme__inactive-background-color);
+          border-radius: 8px;
+          &.active {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            transition: all 0.15s ease;
+
+            &:hover {
+              background-color: var(--color-primary-inactive);
+              transition: all 0.15s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//footer
+.footerWrap {
+  @include mobile {
+    display: none;
+  }
+  @include setMaxWidth;
+  @include flexBox($jc: between, $ai: start);
+  gap: 16px;
+  min-height: 80px;
+  .copyright {
+    color: var(--color-grey-03);
+    font-size: 1.3rem;
+  }
+
+  .socialLinkWrap {
+    @include flexBox($jc: start);
+    gap: 24px;
+
+    .socialLink {
+      opacity: 0.5;
+      transition: all 0.2s ease;
+
+      &:hover {
+        opacity: 1;
+        transition: all 0.2s ease;
+      }
+    }
+  }
+}
+
+/* modal (progress) */
+.modalOverlay {
+  @include flexBox();
+  @include mobile {
+    @include flexBox($ai: end);
+  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  .modal {
+    @include mobile {
+      width: 100%;
+      max-height: 100%;
+      max-width: 100%;
+      padding: 24px 16px;
+    }
+    background: var(--theme__background-color-02);
+    padding: 32px;
+    border-radius: 8px;
+    max-width: 440px;
+    width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+
+    .modalBody {
+      @include flexBox($dir: column);
+      width: 100%;
+      height: 100%;
+
+      .lottieWrap {
+        lottie-player {
+          width: 220px;
+          height: auto;
+        }
+      }
+
+      .progressContainer {
+        margin-top: 16px;
+        width: 80%;
+        height: 8px;
+        background-color: var(--theme__inactive-background-color);
+        border-radius: 15px;
+        position: relative;
+
+        .progressBar {
+          width: 0;
+          height: 100%;
+          background: var(--color-primary-gradient);
+          position: relative;
+          border-radius: 15px;
+          transition: width 0.1s linear;
+
+          .progressTooltip {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            transform: translateX(-50%);
+            background-color: var(--theme__background-color-05);
+            color: var(--color-white);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 1.3rem;
+            transition: left 0.1s linear;
+            &::after {
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              transform: translateX(-50%);
+              border-width: 5px;
+              border-style: solid;
+              border-color: var(--theme__background-color-05) transparent
+                transparent transparent;
+            }
+          }
+        }
+      }
+
+      .cautionWrap {
+        @include mobile {
+          padding: 16px;
+        }
+        margin-top: 32px;
+        padding: 20px;
+        background-color: rgba(255, 103, 17, 0.12);
+        border: 2px solid rgba(255, 103, 17, 0.4);
+        border-radius: 8px;
+        .titleWrap {
+          @include flexBox($jc: start);
+          gap: 8px;
+          .cautionTitle {
+            color: var(--color-warn);
+            font-size: 1.7rem;
+            font-weight: 500;
+          }
+        }
+        .cautionDesc {
+          margin-top: 8px;
+          color: var(--color-white);
+          font-size: 1.5rem;
+          font-weight: 400;
+          line-height: 2.4rem;
+        }
+      }
+
+      .modalTitle {
+        @include mobile {
+          font-size: 1.5rem;
+        }
+        margin-top: 16px;
+        color: var(--color-white);
+        font-size: 1.7rem;
+        font-weight: 400;
+      }
+    }
+  }
+}

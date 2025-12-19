@@ -1,0 +1,49 @@
+// ** Common Colors
+// ** START
+// === Primary
+$color-primary: #6f00ff;
+$color-primary-hover: #6505e3;
+
+$color-point: #63baab;
+$color-white: #fff;
+$color-black: #001432;
+$color-success: #18ce82;
+$color-failure: #ea475b;
+$color-warn: #ff7544;
+
+// === Grey
+$color-grey-01: #f2f4f8;
+$color-grey-02: #93919d;
+$color-grey-03: #5f5b67;
+$color-grey-04: #313131;
+$color-grey-05: #0f0f0f;
+
+//border
+$color-border: #2f2b37;
+
+//Gradient
+$color-primary-gradient: linear-gradient(90deg, #9839ff, #6f00ff);
+$color-primary-gradient-02: linear-gradient(
+  112deg,
+  #d52d7a -15.14%,
+  #d336a9 27.83%,
+  #9839ff 70.81%,
+  #6f00ff 113.78%
+);
+
+//background
+$theme__background-color-01: #0f0413;
+$theme__background-color-02: #18151e;
+$theme__background-color-03: #201c29;
+$theme__background-color-04: #2a2534;
+$theme__background-color-05: #342e3f;
+$theme__background-color-06: #3e384a;
+
+//Inactive
+$theme__inactive-background-color: #222028;
+$theme__inactive-color: #5f5b67;
+
+//Cancel
+$theme__cancel-background-color: #3e3a47;
+$theme__cancel-background-color-hover: #383441;
+$theme__cancel-color: #c1bfcb;

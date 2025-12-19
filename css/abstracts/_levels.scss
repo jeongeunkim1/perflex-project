@@ -1,0 +1,10 @@
+$header__level: 3000;
+$footer__level: 3000;
+
+$side-bar-container__level: 3000;
+$side-bar-overlay__level: $side-bar-container__level + 1;
+$side-bar__level: $side-bar-overlay__level + 1;
+
+$modal-container__level: 3000;
+$modal-overlay__level: $modal-container__level + 1;
+$modal__level: $modal-overlay__level + 1;

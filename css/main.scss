@@ -1,0 +1,57 @@
+// @import "./abstracts/mixins";
+// @import "common";
+@import "abstracts/colors";
+@import "abstracts/functions";
+@import "abstracts/levels";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/base";
+@import "base/reset";
+@import "base/typography";
+
+:root {
+  /* Primary Color */
+  --color-primary: #{$color-primary};
+  --color-primary-hover: #{$color-primary-hover};
+
+  --color-point: #{$color-point};
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+
+  --color-success: #{$color-success};
+  --color-failure: #{$color-failure};
+  --color-warn: #{$color-warn};
+
+  /* Greys */
+  --color-grey-01: #{$color-grey-01};
+  --color-grey-02: #{$color-grey-02};
+  --color-grey-03: #{$color-grey-03};
+  --color-grey-04: #{$color-grey-04};
+  --color-grey-05: #{$color-grey-05};
+
+  /* Borders */
+  --color-border: #{$color-border};
+
+  /* Gradient */
+  --color-primary-gradient: #{$color-primary-gradient};
+  --color-primary-gradient-02: #{$color-primary-gradient-02};
+
+  /* background */
+  --theme__background-color-01: #{$theme__background-color-01};
+  --theme__background-color-02: #{$theme__background-color-02};
+  --theme__background-color-03: #{$theme__background-color-03};
+  --theme__background-color-04: #{$theme__background-color-04};
+  --theme__background-color-05: #{$theme__background-color-05};
+  --theme__background-color-06: #{$theme__background-color-06};
+
+  /* Inactive */
+  --theme__inactive-background-color: #{$theme__inactive-background-color};
+  --theme__inactive-color: #{$theme__inactive-color};
+
+  /* Cancel */
+  --theme__cancel-background-color: #{$theme__cancel-background-color};
+  --theme__cancel-background-color-hover: #{$theme__cancel-background-color-hover};
+
+  --theme__cancel-color: #{$theme__cancel-color};
+}

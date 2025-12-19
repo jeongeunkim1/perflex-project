@@ -1,0 +1,702 @@
+// @import "./abstracts/mixins";
+@import "../main.scss";
+@import "../abstracts/mixins";
+@import "../abstracts/colors";
+
+@keyframes scrollWheel {
+  68% {
+    top: 20%;
+    height: 6px;
+  }
+  76% {
+    top: 30%;
+    height: 12px;
+  }
+
+  84%,
+  92% {
+    top: 70%;
+    height: 6px;
+  }
+}
+
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+//header
+.headerWrap {
+  @include flexBox();
+  width: 100%;
+  height: 80px;
+
+  @include mobile {
+    height: 56px;
+    display: block;
+  }
+
+  .headerContent {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 80px;
+    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+      rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+      rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
+    @include mobile {
+      height: 60px;
+    }
+
+    .headerBox {
+      @include setMaxWidth;
+      @include flexBox();
+      width: 100%;
+      height: 80px;
+
+      @include mobile {
+        height: 60px;
+        justify-content: space-between;
+      }
+
+      .flexBasisWrap {
+        @include flexBox($jc: start);
+        gap: 32px;
+        flex-basis: 30%;
+        .logoWrap {
+          @include mobile {
+            flex-basis: auto;
+          }
+          .logo {
+            display: block;
+            width: 130px;
+            height: auto;
+            @include mobile {
+              width: 120px;
+            }
+          }
+        }
+
+        .tabMenuWrap {
+          @include mobile {
+            display: none;
+          }
+          @include flexBox();
+          padding: 0 4px;
+          background-color: var(--theme__background-color-03);
+          height: 40px;
+          border-radius: 50px;
+          .tab {
+            @include setEngFont;
+
+            padding: 0 16px;
+            height: 32px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--theme__inactive-color);
+            border-radius: 50px;
+
+            &.active {
+              color: var(--color-white);
+              background: var(--color-primary-gradient);
+            }
+          }
+        }
+      }
+      .menuButton {
+        @include flexBox(column, between, start);
+        display: none;
+        padding: 8px;
+        gap: 4.8px;
+        @include mobile {
+          display: flex;
+        }
+        .line {
+          width: 22px;
+          height: 2px;
+          background-color: var(--color-white);
+        }
+      }
+
+      .navMenuWrap {
+        @include flexBox();
+        gap: 24px;
+        flex: 1;
+        text-align: center;
+        @include mobile {
+          display: none;
+        }
+
+        .navLink {
+          @include setEngFont;
+          padding: 8px 16px;
+          color: var(--color-white);
+          font-size: 1.6rem;
+          font-weight: 600;
+          transition: all 0.15s ease;
+
+          &.inactive {
+            color: var(--theme__inactive-color);
+            &:hover {
+              transition: all 0.15s ease;
+              color: var(--color-white);
+            }
+          }
+        }
+      }
+
+      .headerMenuWrap {
+        @include flexBox($jc: end);
+        flex-basis: 30%;
+
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+//mobileHeader
+.mobileMenu {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--theme__background-color-01);
+  z-index: 100;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  transform: translateY(-100%);
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mobileMenuContent {
+    @include flexBox($jc: start, $ai: start, $dir: column);
+    padding: 16% 20px;
+    display: flex;
+    height: 100%;
+    gap: 40px;
+
+    .closeIconWrap {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+
+      .closeIconContent {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        .closeIcon {
+          margin-top: 12px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 24px; /* 라인의 너비 */
+          height: 2px; /* 라인의 높이 */
+          background-color: var(--color-white);
+          &:first-child {
+            transform: rotate(45deg); /* 첫 번째 라인을 45도 회전 */
+          }
+          &:last-child {
+            transform: rotate(-45deg); /* 두 번째 라인을 -45도 회전 */
+          }
+        }
+      }
+    }
+
+    .tabMenuWrap {
+      @include flexBox();
+      padding: 0 4px;
+      background-color: var(--theme__background-color-03);
+      height: 40px;
+      border-radius: 50px;
+      .tab {
+        @include setEngFont;
+        padding: 0 16px;
+        height: 32px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--theme__inactive-color);
+        border-radius: 50px;
+
+        &.active {
+          color: var(--color-white);
+          background: var(--color-primary-gradient);
+        }
+      }
+    }
+
+    .navMenuWrap {
+      @include flexBox($ai: start, $dir: column);
+      @include setEngFont;
+      gap: 40px;
+      width: 100%;
+
+      .navLink {
+        color: var(--color-white);
+        padding: 8px 0;
+        font-size: 2.4rem;
+        font-weight: 600;
+      }
+    }
+
+    .socialLinkWrap {
+      @include flexBox($ai: end);
+      flex-wrap: wrap;
+      gap: 32px;
+      width: 100%;
+
+      .socialLink {
+        opacity: 0.5;
+        transition: all 0.2s ease;
+
+        &:hover {
+          opacity: 1;
+          transition: all 0.2s ease;
+        }
+      }
+    }
+  }
+}
+
+//main
+.mainContent {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -50%;
+    width: 160%;
+    height: 160%;
+    background: radial-gradient(circle, #4904dd44, #1f0836 80%);
+    transform: translate(-50%, -50%);
+    filter: blur(200px);
+    z-index: -1;
+    border-radius: 50%;
+  }
+
+  .sectionWrap {
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+    @include setMaxWidth;
+
+    width: 100%;
+    height: 100%;
+
+    .textWrap {
+      @include flexBox($dir: column, $jc: start, $ai: start);
+      @include mobile {
+        gap: 12px;
+        margin-top: 40px;
+      }
+      margin-top: 80px;
+      gap: 16px;
+      .sectionTitle {
+        @include setEngFont;
+        @include mobile {
+          font-size: 2.8rem;
+          line-height: 3.8rem;
+        }
+        color: var(--color-white);
+        font-size: 3.2rem;
+        font-weight: 700;
+      }
+      .sectionSubTitle {
+        @include mobile {
+          font-size: 1.7rem;
+          width: 92%;
+          line-height: 2.5rem;
+        }
+        width: 56%;
+        color: var(--color-grey-02);
+        font-size: 2rem;
+        line-height: 2.9rem;
+        font-weight: 400;
+      }
+    }
+
+    .analysisWrap {
+      @include mobile {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 32px;
+      }
+      @include flexBox($jc: start);
+      gap: 16px;
+      margin-top: 40px;
+
+      .analysisContent {
+        @include mobile {
+          padding: 20px 16px;
+          border-radius: 8px;
+          gap: 16px;
+        }
+        @include flexBox($jc: start);
+        width: 100%;
+        flex: 1;
+        gap: 24px;
+        background-color: var(--theme__background-color-02);
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        padding: 24px;
+        .iconWrap {
+          @include mobile {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+          }
+
+          @include flexBox();
+          width: 50px;
+          height: 50px;
+          border-radius: 8px;
+          &.graph {
+            background-color: #132337;
+          }
+          &.car {
+            background-color: #29162f;
+          }
+          &.token {
+            background-color: #24240f;
+          }
+          .icon {
+            @include mobile {
+              width: 40px;
+              height: 40px;
+            }
+            width: 50px;
+            height: 50px;
+            display: block;
+          }
+        }
+        .analysisTextWrap {
+          @include mobile {
+            gap: 6px;
+          }
+
+          @include flexBox($dir: column, $ai: start);
+          gap: 8px;
+          .title {
+            @include mobile {
+              font-size: 1.3rem;
+            }
+
+            color: var(--color-grey-02);
+            font-size: 1.5rem;
+            font-weight: 400;
+          }
+          .amount {
+            @include mobile {
+              font-size: 2.4rem;
+            }
+            @include setEngFont;
+            color: var(--color-white);
+            font-size: 2.8rem;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .searchBox {
+      @include flexBox($jc: end);
+
+      .searchWrap {
+        @include flexBox($jc: start);
+        @include mobile {
+          margin-top: 48px;
+          padding: 0 16px;
+          width: 100%;
+          height: 48px;
+        }
+        margin-top: 80px;
+        padding: 0 24px;
+        height: 56px;
+        width: 560px;
+        border: 2px solid var(--color-border);
+        background-color: var(--theme__background-color-01);
+        border-radius: 50px;
+        gap: 8px;
+        transition: all 0.15s ease;
+
+        &:hover,
+        &:focus {
+          border: 2px solid var(--color-grey-02);
+          transition: all 0.15s ease;
+        }
+
+        .searchInput {
+          width: 100%;
+          font-size: 1.5rem;
+          color: var(--color-white);
+          &::placeholder {
+            color: var(--theme__inactive-color);
+          }
+        }
+      }
+    }
+
+    .tableWrap {
+      @include mobile {
+        margin-bottom: 40px;
+      }
+      margin-top: 24px;
+      margin-bottom: 80px;
+      background-color: var(--theme__background-color-02);
+      border-radius: 12px;
+      box-shadow: rgba(7, 6, 10, 1) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+      .tableContent {
+        width: 100%;
+
+        .tableHeaderWrap {
+          @include mobile {
+            @include flexBox($jc: start, $dir: column, $ai: start);
+            gap: 24px;
+            padding: 24px 16px;
+          }
+
+          @include flexBox($jc: between);
+          height: 100%;
+          padding: 32px;
+
+          .tableHeaderTitle {
+            @include mobile {
+              font-size: 1.9rem;
+            }
+            color: var(--color-white);
+            font-size: 2rem;
+            font-weight: 500;
+          }
+
+          .tableHeaderFilterWrap {
+            @include flexBox();
+            gap: 6px;
+            .tableHeaderFilter {
+              padding: 6px 12px;
+              font-size: 1.5rem;
+              font-weight: 400;
+              color: var(--color-white);
+              background-color: var(--theme__background-color-04);
+              border-radius: 4px;
+              transition: all 0.15s ease;
+
+              &.active {
+                background-color: var(--color-grey-03);
+              }
+
+              &.inactive:hover {
+                background-color: var(--theme__background-color-06);
+              }
+            }
+          }
+        }
+
+        .tableBodyWrap {
+          @include mobile {
+            overflow: scroll;
+          }
+          .tableBodyContent {
+            @include mobile {
+              width: 1000px;
+            }
+            width: 100%;
+
+            .tableBodyColumnWrap {
+              @include mobile {
+                padding: 16px;
+              }
+              @include flexBox($jc: between);
+              width: 100%;
+              font-size: 1.3rem;
+              font-weight: 500;
+              padding: 16px 32px;
+              color: var(--color-grey-03);
+              border-bottom: 1px solid var(--color-border);
+
+              .tableBodyColumn {
+                @include mobile {
+                  width: 14%;
+                }
+                @include flexBox($jc: start);
+                gap: 4px;
+                text-align: left;
+                width: 10%;
+
+                &.type {
+                  width: 6%;
+                }
+
+                &.timestamp {
+                  @include mobile {
+                    width: 16%;
+                  }
+                  width: 14%;
+                }
+
+                .infoIcon {
+                  width: 16px;
+                  height: 16px;
+                }
+              }
+            }
+
+            .tableBodyRowWrap {
+              @include mobile {
+                padding: 24px 16px;
+              }
+              @include flexBox($jc: between);
+              width: 100%;
+              gap: 40px;
+              font-size: 1.5rem;
+              padding: 32px;
+              color: var(--color-white);
+              background-color: var(--theme__background-color-02);
+              border-bottom: 1px solid var(--color-border);
+              transition: all 0.15s ease;
+
+              .inactive {
+                text-decoration: none !important;
+                color: var(--theme__inactive-color) !important;
+              }
+
+              &:hover {
+                background-color: var(--theme__background-color-03);
+                transition: all 0.15s ease;
+              }
+
+              .tableBodyRow {
+                @include mobile {
+                  width: 14%;
+                }
+                @include flexBox($jc: start);
+                gap: 8px;
+                width: 10%;
+                text-align: left;
+
+                &.type {
+                  width: 6%;
+                }
+
+                &.timestamp {
+                  @include mobile {
+                    width: 16%;
+                  }
+                  width: 14%;
+                }
+
+                &.from,
+                &.to {
+                  color: var(--color-white);
+                  text-decoration: underline;
+                }
+
+                .logo {
+                  width: 24px;
+                  height: 24px;
+                  border-radius: 4px;
+                }
+              }
+            }
+          }
+        }
+        .tableFooterWrap {
+          @include mobile {
+            @include flexBox($jc: between);
+            padding: 24px 16px;
+          }
+          @include flexBox($jc: end);
+          gap: 32px;
+          padding: 32px;
+          .tableFooterPaginationInfo {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--color-white);
+          }
+          .tableFooterPaginationControls {
+            @include flexBox();
+            gap: 16px;
+
+            .tableFooterPageBtn {
+              &.firstPage {
+                transform: rotate(0deg);
+              }
+              &.prevPage {
+                transform: rotate(-270deg);
+                margin-right: 8px;
+              }
+              &.nextPage {
+                transform: rotate(-90deg);
+              }
+              &.lastPage {
+                transform: rotate(180deg);
+              }
+
+              .icon {
+                width: 24px;
+                height: 24px;
+                &.inactive {
+                  color: var(--theme__inactive-color);
+                }
+                &.active {
+                  color: var(--color-white);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//footer
+.footerWrap {
+  @include mobile {
+    display: none;
+  }
+  @include setMaxWidth;
+  @include flexBox($jc: between, $ai: start);
+  gap: 16px;
+  min-height: 80px;
+  .copyright {
+    color: var(--color-grey-03);
+    font-size: 1.3rem;
+  }
+
+  .socialLinkWrap {
+    @include flexBox($jc: start);
+    gap: 24px;
+
+    .socialLink {
+      opacity: 0.5;
+      transition: all 0.2s ease;
+
+      &:hover {
+        opacity: 1;
+        transition: all 0.2s ease;
+      }
+    }
+  }
+}

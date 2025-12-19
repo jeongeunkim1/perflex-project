@@ -1,0 +1,28 @@
+:root {
+  //
+
+  // Side Bar
+  --side-bar-container__level: #{$side-bar-container__level};
+  --side-bar-overlay__level: #{$side-bar-overlay__level};
+  --side-bar__level: #{$side-bar__level};
+
+  // Modal
+  --modal-container__level: #{$modal-container__level};
+  --modal-overlay__level: #{$modal-overlay__level};
+  --modal__level: #{$modal__level};
+
+  // Theme
+  @include themeSelector($theme:dark);
+  //@include themeSelector($theme:dark);
+
+  // By Device
+  @include mobile {
+    --header__height: #{$header__mobile-height};
+  }
+  @include tablet {
+    --header__height: #{$header__mobile-height};
+  }
+  @include desktop {
+    --header__height: #{$header__desktop-height};
+  }
+}

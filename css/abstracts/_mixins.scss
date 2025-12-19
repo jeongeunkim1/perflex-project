@@ -1,0 +1,63 @@
+// Mixin to generate example styles
+// @param {String} $dir - The first test value (default: "row")
+// @param {String} $jc - The second test value (default: "start")
+// @param {String} $ai - The second test value (default: "center")
+@mixin flexBox($dir: row, $jc: center, $ai: center) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: getFlexValue($jc);
+  align-items: getFlexValue($ai);
+}
+
+@mixin inlineFlexBox($dir: row, $jc: center, $ai: center) {
+  display: inline-flex;
+  flex-direction: $dir;
+  justify-content: getFlexValue($jc);
+  align-items: getFlexValue($ai);
+}
+
+@mixin makeThemeVariables() {
+}
+
+@mixin themeSelector($theme: dark) {
+  //@if ($theme == dark) {
+  //@return map-get($theme-map);
+  //} @else if ($theme == light) {
+  //@return map-get($theme-map);
+  //}
+}
+
+@mixin mobile {
+  @media (min-width: $breakpoint-mobile) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+@mixin setMaxWidth {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  @media screen and (max-width: 479px) {
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: none;
+    margin: auto;
+  }
+}
+
+@mixin setEngFont {
+  font-family: "Montserrat", sans-serif;
+}
